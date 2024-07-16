@@ -1,0 +1,24 @@
+[10-Jul-2024 15:42:57 Europe/Berlin] PHP Warning:  Undefined variable $_settings in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:42:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function info() on null in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php:7
+Stack trace:
+#0 C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\resource_library.php(86): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:07 Europe/Berlin] PHP Warning:  Undefined variable $_settings in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function info() on null in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php:7
+Stack trace:
+#0 C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\resource_library.php(86): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:12 Europe/Berlin] PHP Warning:  Undefined variable $_settings in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function info() on null in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php:7
+Stack trace:
+#0 C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\resource_library.php(86): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:44 Europe/Berlin] PHP Warning:  Undefined variable $_settings in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
+[10-Jul-2024 15:43:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function info() on null in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php:7
+Stack trace:
+#0 C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\resource_library.php(86): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\STUDENT SELF MANAGEMENT SYSTEM\admin\inc\header.php on line 7
