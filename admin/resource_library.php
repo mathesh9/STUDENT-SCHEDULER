@@ -7,9 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    if ($_settings->userdata('type') != 1) {
-        $where = " where user_id = '{$_settings->userdata('id')}' ";
-    }
+    $_SESSION['user_id'] = 1; // For testing purposes, but in production, this should be managed by your login system
 }
 
 $user_id = $_SESSION['user_id'];
@@ -116,14 +114,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['action']) && $_GET['acti
         </form>
         <hr>
         <h3>My Resources</h3>
-        <div class="list-group" id="resource-list">
-            <!-- Resources will be loaded here by AJAX -->
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>File</th>
+                    <th>Link</th>
+                    <th>Note</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resource-list">
+                <!-- Resources will be loaded here by AJAX -->
+            </tbody>
+        </table>
     </div>
     <?php require_once('inc/footer.php'); ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $user_id = $_SESSION['user_id'];
         $(document).ready(function() {
             function loadResources() {
                 $.ajax({
@@ -137,21 +147,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['action']) && $_GET['acti
                         if (data.status === 'success') {
                             $('#resource-list').empty();
                             $.each(data.resources, function(index, resource) {
-                                var resourceItem = '<div class="list-group-item" data-id="' + resource.id + '">';
-                                resourceItem += '<h5>' + resource.title + '</h5>';
-                                resourceItem += '<p>' + resource.description + '</p>';
+                                var resourceItem = '<tr>';
+                                resourceItem += '<td>' + resource.title + '</td>';
+                                resourceItem += '<td>' + resource.description + '</td>';
                                 if (resource.file_path) {
-                                    resourceItem += '<p><a href="' + resource.file_path + '" target="_blank"><i class="fas fa-download"></i></a></p>';
+                                    resourceItem += '<td><a href="' + resource.file_path + '" target="_blank"><i class="fas fa-download"></i></a></td>';
+                                } else {
+                                    resourceItem += '<td></td>';
                                 }
                                 if (resource.link) {
-                                    resourceItem += '<p><a href="' + resource.link + '" target="_blank"><i class="fas fa-link"></i></a></p>';
+                                    resourceItem += '<td><a href="' + resource.link + '" target="_blank"><i class="fas fa-link"></i></a></td>';
+                                } else {
+                                    resourceItem += '<td></td>';
                                 }
-                                if (resource.note) {
-                                    resourceItem += '<p>' + resource.note + '</p>';
-                                }
-                                resourceItem += '<small class="text-muted">Added on ' + new Date(resource.date_added).toLocaleString() + '</small>';
-                                resourceItem += '<button class="btn btn-danger btn-sm delete-resource" data-id="' + resource.id + '"><i class="fas fa-trash"></i></button>';
-                                resourceItem += '</div>';
+                                resourceItem += '<td>' + resource.note + '</td>';
+                                resourceItem += '<td>' + new Date(resource.date_added).toLocaleString() + '</td>';
+                                resourceItem += '<td><button class="btn btn-danger btn-sm delete-resource" data-id="' + resource.id + '"><i class="fas fa-trash"></i></button></td>';
+                                resourceItem += '</tr>';
                                 $('#resource-list').append(resourceItem);
                             });
                         }
