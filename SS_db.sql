@@ -88,7 +88,7 @@ CREATE TABLE `schedule_list` (
 --
 
 INSERT INTO `schedule_list` (`id`, `user_id`, `category_id`, `title`, `description`, `schedule_from`, `schedule_to`, `reminder_time`, `is_whole`, `date_created`, `date_updated`, `status`) VALUES
-(24, 29, 36, 'complete fyp', 'if i dont im fucked', '2024-07-14 21:08:00', '2024-07-18 23:59:00', '2024-07-14 21:08:00', 0, '2024-07-14 21:08:43', '2024-07-15 00:23:25', 'In Progress');
+(24, 29, 36, 'complete fyp', 'done by the 18th', '2024-07-14 21:08:00', '2024-07-18 23:59:00', '2024-07-14 21:08:00', 0, '2024-07-14 21:08:43', '2024-07-15 00:23:25', 'In Progress');
 
 -- --------------------------------------------------------
 
